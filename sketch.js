@@ -8,11 +8,11 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(2000, 1600);
+  createCanvas(1000, 600);
 
   bg = createSprite(200,390);
   bg.addImage(bgImage);
-  bg.scale =0.5;
+  bg.scale =-3;
 // 
   iron = createSprite(200,505,20,50);
   iron.addAnimation("still", iron_move);
