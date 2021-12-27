@@ -13,14 +13,18 @@ function setup() {
   bg = createSprite(200,390);
   bg.addImage(bgImage);
   bg.scale =-3;
+
+  bg.velocityY=3;
 // 
   iron = createSprite(200,505,20,50);
   iron.addAnimation("still", iron_move);
   iron.scale =0.3;
+  iron.debug=true;
+  iron.setCollider("rectangle",100,0,200,400);
 
-  // ground = createSprite(200,585,400,10);
- 
-  // ground.visible = false;
+  ground= createSprite(200,585,400,10);
+  ground.visible=false;
+
 }
 
 function draw() {
@@ -28,11 +32,15 @@ function draw() {
 
   if(keyDown("space") ) {
     iron.velocityY = -16;
+
+
+    iron.velocityY = iron.velocityY + 0.5;
+    iron.collide(ground);
+  
   }
 
-  // iron.velocityY = mario.velocityY + 0.5;
-  // iron.collide(ground);
 
 
   drawSprites();
 }
+
